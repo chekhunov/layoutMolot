@@ -1,0 +1,52 @@
+.shop {
+
+  &__location {
+    margin-bottom: 100px;
+
+    &.active {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__add-location {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease 0.25s;
+    overflow: hidden;
+
+    &.active {
+      overflow: visible;
+      max-height: 360px;
+      opacity: 1;
+    }
+  }
+
+  &__add-address-btn {
+    transition: color 0.28s ease;
+
+    &.active {
+      cursor: default;
+      color: #4F4F4F;
+    }
+  }
+
+  &__payment-btn {
+    width: 310px;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .shop {
+    &__payment-btn {
+      width: 100%;
+    }
+
+    &__location {
+      margin-bottom: 50px;
+    }
+
+  }
+
+
+}

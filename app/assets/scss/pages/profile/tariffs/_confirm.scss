@@ -1,0 +1,48 @@
+@import "~/assets/scss/abstracts/variables";
+
+.confirm {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 670px;
+
+  &__upload-btn {
+    cursor: pointer;
+    width: 290px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__info {
+    color: $color-gray;
+  }
+
+  &__status {
+    display: flex;
+    align-items: flex-start;
+  }
+  &__icon {
+    margin-right: 10px;
+    
+    svg {
+      transform: translateY(2px);
+    }
+  }
+  &__status-descr {
+    max-width: 480px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .confirm {
+    min-height: auto;
+
+    &__upload-btn {
+      width: 100%;
+    }
+  }
+  
+}

@@ -1,0 +1,29 @@
+.btns-wrap {
+  display: flex;
+  justify-content: center;
+
+  &__btn {
+    height: 50px;
+    width: 250px;
+
+    &:first-child {
+      margin-right: 30px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .btns-wrap {
+    &__btn {
+      width: 130px;
+      height: 30px;
+      font-size: 10px;
+      border-radius: 6px;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+
+  }
+}

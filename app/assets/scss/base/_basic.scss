@@ -1,0 +1,82 @@
+@import "../abstracts/variables";
+
+body {
+  min-width: 320px;
+  background-color: $color-smoke;
+  overflow-x: hidden;
+
+  // remove tap highlight
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+header {
+  min-width: 320px;
+}
+
+// disable arrows on number inputs
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+// ====
+
+.underline {
+  position: relative;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    background-color: #000000;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+      transition: width 0.3s;
+    }
+  }
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.preload {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0 !important;
+  height: 12px !important;
+  width: 12px !important;
+  border-radius: 50%;
+  border-right: 1px solid;
+  border-top: 1px solid;
+  border-left: none;
+  border-bottom: none;
+  animation: preload 0.6s ease-in-out infinite;
+}
+
+@keyframes preload {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

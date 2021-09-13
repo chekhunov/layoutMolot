@@ -1,0 +1,66 @@
+@import '~/assets/scss/abstracts/mixins';
+
+.about {
+  margin-bottom: -10px;
+
+  &__heading {
+    margin-bottom: 40px;
+  }
+
+  &__image-wrap {
+    flex-shrink: 0;
+    width: 421px;
+    height: 265px;
+    border-radius: 10px;
+    overflow: hidden;
+    // display: inline-block;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    float: left;
+  }
+  &__img {
+    @include image-cover;
+  }
+
+  &__text {
+    color: #4F4F4F;
+    font-size: 18px;
+    min-height: 265px;
+  }
+
+  &__reviews {
+    display: flex;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about {
+    &__text {
+      font-size: 16px;
+      min-height: 205px;
+    }
+
+    &__image-wrap {
+      width: 326px;
+      height: 205px;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .about {
+    &__heading {
+      margin-bottom: 10px;
+    }
+
+    &__image-wrap {
+      float: none;
+      width: 100%;
+      height: 176px;
+      min-height: 176px;
+    }
+
+    
+  }
+}

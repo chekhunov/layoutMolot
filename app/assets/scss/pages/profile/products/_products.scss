@@ -1,0 +1,132 @@
+@import "~/assets/scss/abstracts/variables";
+
+.products {
+  &__drpd {
+    display: none;
+  }
+
+  &__options {
+    display: flex;
+  }
+
+  &__pencil-btn {
+    transition: visibility 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  &__switchers {
+    display: flex;
+  }
+  &__activity-switcher {
+    margin-right: 20px;
+  }
+
+  &__name {
+    width: 85%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__views {
+    margin-left: 5px;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+    color: $color-gray;
+  }
+
+  &__headings {
+    white-space: nowrap;
+  }
+
+  &__btns-relativity {
+    position: relative;
+    padding-right: 20px;
+  }
+  &__product-link {
+    margin-right: 9px;
+  }
+  
+  &__fixed-btns {
+    display: flex;
+    position: absolute;
+    right: 0;
+    padding: 0 20px 0 18px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.92) 19%);
+  }
+  &__table-wrap {
+    position: relative;
+  }
+
+  &__first-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__photo {
+    margin-right: 16px;
+  }
+
+  &__name-input-wrap {
+    width: 85%;
+  }
+  &__price-input-wrap {
+    width: 70%;
+  }
+
+  &__choose-col {
+    width: 9%;
+  }
+  &__code-col {
+    width: 14%;
+  }
+  // &__date-col {
+  //   width: 12%;
+  // }
+  &__name-col {
+    width: 26%;
+  }
+  &__price-col {
+    width: 20%;
+  }
+  &__activity-col {
+    width: 17%;
+  }
+  &__options-col {
+    width: 14%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .products {
+    &__fixed-btns {
+      padding-right: 10px;
+    }
+
+  }  
+}
+
+@media (max-width: 767px) {
+  .products {
+    &__headings {
+      display: flex;
+    }
+
+    &__tab {
+      display: none;
+    }
+
+    &__drpd {
+      display: block;
+    }
+
+    &__fixed-btns {
+      padding-right: 3px;
+    }
+
+  }
+}

@@ -1,0 +1,43 @@
+.methods {
+  &__title-wrap {
+    display: flex;
+  }
+
+  &__title {
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    height: 40px;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+
+    &:hover {
+      // background-color: lightblue;
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .methods {
+    &__item {
+      height: auto;
+      padding: 12px 0;
+    }
+  }
+}

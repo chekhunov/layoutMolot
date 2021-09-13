@@ -1,0 +1,168 @@
+@import '~/assets/scss/abstracts/mixins';
+
+.shop-header {
+  width: 100%;
+  color: #fff;
+
+  &__inner {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__col {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  &__icon-wrap {
+    position: relative;
+  }
+
+  &__col-catalog {
+    justify-content: flex-start;
+  }
+  &__col-logo {
+    justify-content: center;
+  }
+  &__col-contact {
+    justify-content: flex-end;
+  }
+
+  &__contacts-wrap {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo-wrap {
+    height: 55px;
+    width: 150px;
+  }
+  &__logo {
+    @include image-contain;
+  }
+
+  &__phone {
+    color: #fff;
+    font-size: 18px;
+  }
+
+  &__count {
+    position: absolute;
+    top: -4px;
+    right: -3px;
+    line-height: 15px;
+    border-radius: 50%;
+    width: 15px;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &__basket-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__basket-btn-text {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  &__link-contacts {
+    display: none;
+    color: #fff;
+    margin-top: 8px;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  &__catalog-btn {
+    color: #fff;
+    font-size: 16px;
+  }
+  &__catalog-btn-text {
+    margin-left: 25px;
+  }
+
+  &__mob-burger {
+    display: none;
+  }
+
+  &__catalog-wrap {
+    position: relative;
+    z-index: 20;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .shop-header {
+    &__link-contacts {
+      display: block;
+    }
+
+    &__basket-btn-text {
+      display: none;
+    }
+
+
+  }
+}
+
+@media (max-width: 767px) {
+  .shop-header {
+    &__mob-burger {
+      cursor: pointer;
+      display: block;
+      height: 17px;
+    }
+    
+    &__contacts-wrap {
+      display: none;
+    }
+
+    &__inner {
+      padding: 10px 0;
+    }
+
+    &__icon-wrap {
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    &__count {
+      line-height: 11px;
+      width: 11px;
+      font-size: 11px;
+    }
+
+    &__catalog-btn {
+      display: none;
+    }
+
+    &__header-inner {
+      padding: 10px 0;
+    }
+
+        
+    &__logo-wrap {
+      height: 20px;
+      width: 65px;
+    }
+
+    top: 48px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+}
+
+

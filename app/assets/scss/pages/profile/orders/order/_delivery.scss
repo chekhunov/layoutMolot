@@ -1,0 +1,60 @@
+.delivery {
+  border: 2px solid $color-yellow;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 50px;
+  background-color: #fff;
+
+  &__items-list {
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__links {
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    color: #F2994A;
+  }
+
+}
+ 
+@media (max-width: 1200px) {
+  .delivery  {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .delivery  {
+    padding: 10px 10px 15px 10px;
+    // margin-left: 10px;
+    // margin-right: 10px;
+
+    &__items-list {
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      margin-bottom: 20px;
+      line-height: 19px;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__links {
+      font-size: 12px;
+    }
+  }
+}

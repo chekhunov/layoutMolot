@@ -1,0 +1,159 @@
+.swiper {
+  position: relative;
+  margin: 0 47px;
+  display: grid;
+  grid-template-columns: calc(66.6% - 5px) calc(33.3% - 15px);
+  grid-gap: 20px;
+
+  &__controls {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    background-color: rgba(0,0,0, 0.2);
+
+    svg {
+      transition: opacity 0.2s ease;
+      opacity: 0.5;
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  &__arrow-disabled {
+    opacity: 0 !important;
+  }
+
+  &__icons-wrap {
+    position: absolute;
+    // bottom: 41%; ////////////// 
+    bottom: calc(50% - 15px);
+  }
+
+  &__item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    padding-bottom: 0;
+    transition: background-color 0.3s ease;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+
+    &:last-child {
+      background-color: #F2F2F2;
+    }
+
+    // ===========----------- Uncomment it if hover gets broken 
+    // &:hover {
+    //   background-color: #dfdfdf;
+    //   svg path {
+    //     fill: #a2a2a2;
+    //   }
+    // }
+    ///////////////////////////////////////////////////////////
+
+    label {
+      cursor: pointer;
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  &__item-add {
+    margin: 0;
+    position: relative;
+    height: 0;
+    padding-bottom: 100%;
+
+
+    svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.3s ease;
+    }
+
+    label {
+      display: block;
+      height: 145px;
+      width: 100%;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+  }
+
+  &__prev, 
+  &__next {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    top: 50%;
+    opacity: 1;
+  }
+  &__prev {
+    left: -37px;
+    transform: translateY(-50%) rotate(90deg);
+  }
+  &__next {
+    right: -37px;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  &__inner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+@media (max-width: 1200px) {
+  .swiper {
+    grid-template-columns: calc(66.6% - 2.5px) calc(33.3% - 2.5px);
+    margin: 0 23px;
+    grid-gap: 5px;
+
+    &__prev {
+      left: -25px;
+      transform: translateY(-50%) rotate(90deg);
+    }
+    &__next {
+      right: -27px;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper {
+    display: none;
+  }
+}

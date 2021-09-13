@@ -1,0 +1,154 @@
+@import "~/assets/scss/abstracts/variables";
+
+.table {
+  min-height: 650px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 0 0 50px 0;
+  padding: 4px 0;
+  
+  &__head,
+  &__row {
+    display: flex;
+    padding: 16px 20px;
+
+    li {
+      padding-right: 15px;
+      overflow-wrap: break-word;
+      box-sizing: border-box;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 15px 0 30px 20px;
+  }
+
+  &__item {
+    &_red {
+      color: $color-red;
+    }
+    &_green {
+      color: #219653;
+    }
+    &_orange {
+      color: #F2994A;
+    }
+  }
+
+  &__head {
+    color: $color-gray;
+  }
+
+  &__row {
+    &:hover {
+      background-color: $color-smoke;
+    }
+
+
+    &_align-center {
+      align-items: center;
+    }
+
+    &_padding-10 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__mob-item-name {
+    display: none;
+    font-weight: 400;
+    color: $color-gray;
+  }
+
+  svg,
+  img {
+    display: block;
+  }
+  
+  &_mob-hide {
+    display: block;
+  }
+  &_mob-show {
+    display: none;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .table {
+    &__heading {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .table {
+    margin: 0;
+    background-color: inherit;
+
+    &__heading {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 10px 0 15px 10px;
+    }
+
+    &__head {
+      display: none;
+    }
+
+    &__item {
+      text-align: right;
+    }
+
+    &__head,
+    &__row {
+      padding: 19px 10px;
+    }
+
+    &__row {
+      flex-direction: column;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      li {
+        padding-right: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          padding-right: 7px;
+        }
+      }
+    }
+
+    &__mob-item-name {
+      display: block;
+    }
+
+    
+    &_mob-hide {
+      display: none !important;
+    }
+    &_mob-show {
+      display: block !important;
+    }
+  }
+}

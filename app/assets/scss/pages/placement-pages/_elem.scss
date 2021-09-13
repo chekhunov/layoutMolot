@@ -1,0 +1,63 @@
+@import "~/assets/scss/abstracts/variables";
+
+.elem {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  textarea {
+    height: 80px;
+    resize: none;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #E0E0E0;
+  }
+
+  &__title {
+    color: $color-gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  &__category-select {
+    height: 50px;
+  }
+
+  &__input {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  &__icon-wrap {
+    position: relative;
+    margin-left: 10px;
+    cursor: help;
+
+    img {
+      display: block;
+    }
+  }
+  
+}
+
+@media (max-width: 767px) {
+  .elem {
+    &__category-select {
+      height: 38px;
+    }
+
+    &__input {
+      height: 38px;
+    }
+
+    textarea {
+      height: 65px;
+      padding: 10px 12px;
+    }
+  }
+}

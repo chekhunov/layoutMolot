@@ -1,0 +1,712 @@
+@import "~/assets/scss/abstracts/mixins";
+@import "~/assets/scss/abstracts/variables";
+
+.chat {
+  width: 60%;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .choose-chat {
+    display: none;
+  }
+
+  &__options-btn,
+  &__back-btn {
+    display: none;
+  }
+
+  &__header {
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 18px;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  &__mobile-options {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    margin: 0;
+    padding: 12px;
+    list-style-type: none;
+    background-color: #fff;
+    box-shadow: 0 2px 3px 1px rgba(88, 88, 88, 0.2);
+  }
+  
+  &__options {
+    display: flex;
+  }
+
+  &__favorite-btn { 
+    margin-right: 17px;
+  }
+
+  &__archive-btn {
+    margin-right: 5px;
+  }
+
+  &__option-btn {
+    svg {
+      cursor: pointer;
+      height: 23px;
+      width: 23px;
+    }
+  }
+
+      
+  &__favorite-btn,
+  &__archive-btn {
+    &.active {
+      svg {
+        fill: $color-yellow;
+        path {
+          stroke: $color-yellow;
+        }
+      }
+    }
+  }
+  
+  &__header-info {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__product-photo {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 20px;
+    margin-bottom: 0;
+    
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  &__field {
+    @include custom-scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    height: 550px;
+    transition: opacity .2s;
+
+    &.hide {
+      opacity: 0;
+    }
+
+  }
+
+  &__user-name{
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  &__product-name {
+    color: #F2994A;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+
+    
+    &:hover {
+      border-bottom: 1px solid #F2994A;
+      cursor: pointer;
+    }
+  }
+
+  &__placeholder {
+    height: 730px;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__avatar-smaller {
+    margin-right: 10px;
+  }
+
+  &__date {
+    color: $color-silver;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__message-wrap {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    // max-width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    
+  }
+  
+  &__message-text {
+    white-space: pre;
+    margin: 10px 55px 10px 10px;
+  }
+
+  &__sent-time {
+    font-size: 10px;
+    color: $color-gray;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+  }
+
+  &__message-body {
+    border: 1px solid $color-gainsboro;
+    background-color: #fff;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+    max-width: 300px;
+    margin-right: 5px;
+    
+    &::before {
+      content: '';
+      border-left: 7px solid transparent;
+      border-bottom: 8px solid $color-gainsboro;
+      position: absolute;
+      bottom: -1px;
+      left: -7px;
+    }
+
+    &::after {
+      content: '';
+      border-left: 7px solid transparent;
+      border-bottom: 8px solid white;
+      position: absolute;
+      bottom: 0px;
+      left: -5px;
+    }
+  }
+
+  &__bottom-block {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    // justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    z-index: 50;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__multiple-photo {
+    margin: 5px 0 10px 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      cursor: pointer;
+      margin: 2px;
+      height: 80px;
+      width: 48%;
+      
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__send {
+    position: absolute;
+    right: 10px;
+    margin-bottom: 13px;  
+    // top: 50%;
+    // transform: translateY(-50%);
+
+    path {
+      fill: $color-gainsboro;
+    }
+
+    svg {
+      display: block;
+    }
+
+    &.active {
+      path {
+        fill: $color-yellow;
+      }
+    }
+  }
+
+  &__textarea {
+    border: 1px $color-gainsboro solid;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    padding: 13px 40px 13px 15px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 67px;
+    margin-top: 10px;
+    overflow: hidden;
+
+    &::placeholder {
+      color: $color-silver;
+    }
+  }
+
+  &__icon-wrap {
+    background-color: #2F2F59;
+    height: 31px;
+    width: 31px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    flex-shrink: 0;
+    position: relative;
+
+    &::after {
+      content: url('../icons/file.svg');
+      position: absolute;
+      top: 8px;
+    }
+  }
+
+  &__file-wrap {
+    display: flex;
+    cursor: pointer;
+    margin: 10px 55px 10px 10px;
+  }
+
+  &__file-name {
+    font-size: 14px;
+  }
+
+  &__file-size {
+    font-size: 10px;
+  }
+
+  &__attach-file {
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+
+    input[type=file] {
+      display: none;
+    }
+  }
+
+  &__attach {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+    margin-bottom: 0;
+    
+    svg {
+      display: block;
+    }
+  }
+
+  &__attach-photo {
+    display: none;
+  }
+
+  &__attach-photo,
+  &__attach-file {
+    position: relative;
+
+    &.active {
+      .chat__counter {
+        display: flex;
+      }
+    }
+  }
+
+  &__counter {
+    display: none;
+    position: absolute;
+    right: -4px;
+    bottom: -6px;
+    font-size: 10px;
+    height: 13px;
+    width: 13px;
+    background-color: $color-yellow;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__photo-wrap {
+    height: 100px;
+    margin-bottom: 20px;
+
+    img {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      cursor: pointer;
+      height: 100px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__advices {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__advices-text { 
+    cursor: pointer;
+    padding-right: 50px;
+    position: relative;
+    font-size: 12px;
+    text-transform: uppercase;
+    
+
+    &::after {
+      content: '';
+      background-image: url('../icons/arrow.svg');
+      background-size: cover;
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+      transition: 0.3s ease;
+    }
+
+    &.active {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .chat {
+    &__placeholder.active {
+      display: none;
+    }
+
+    &__product-name {
+      font-size: 12px;
+    }
+
+    &__advices {
+      display: none;
+    }
+
+    &__field {
+      max-height: 448px;
+      // max-height: 532px;
+      max-height: 508px;
+    }
+
+    &__header {
+      padding: 10px;
+    }
+
+    &__favorite-btn { 
+      margin-right: 13px;
+    }
+
+    &__option-btn {
+      svg {
+        height: 17px;
+        width: 17px;
+      }
+    }
+
+    &__options {
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &__bottom-block {
+      margin-bottom: 0;
+    }
+
+    &__message-wrap {
+      margin-bottom: 20px;
+    }
+
+    &__product-photo {
+      margin-right: 10px;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .chat {
+    // height: auto;
+
+    &__attach {
+      margin-bottom: 17px;
+    }
+  
+    &__message-wrap {
+      margin-bottom: 15px;
+
+      &.my-msg {
+        .chat__message-body {
+          border-color: $color-yellow;
+
+          &::before {
+            border-bottom: 8px solid $color-yellow;
+          }
+        }
+      }
+    }
+
+    &__attach-file {
+      margin-right: 13px;
+      transform: translateY(2px);
+
+      svg {
+        height: 18px;
+        width: 18px;
+      }
+    }
+
+    &__attach-photo {
+      display: block;
+    }
+
+    &__send {
+      margin-bottom: 15px;
+      right: 20px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    width: 100%;
+    border-radius: 0;
+    padding: 0;
+
+    &__header {
+      border-radius: 0;
+      background-color: rgb(182, 171, 171);
+      margin-bottom: 0;
+      background-color: #fff;
+      padding: 5px 20px;
+      border-bottom: 1px solid $color-gainsboro;
+      height: 50px;
+    }
+
+    &__col:nth-child(1) {
+      width: 100%;
+    }
+
+    &__col:nth-child(2) {
+      display: none;
+    }
+
+    &__back-btn {
+      margin-right: 26px;
+      // transform: rotate(90deg);
+      display: block;
+      cursor: pointer;
+      
+      svg {
+        display: block;
+      }
+    }
+    &__options-btn {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      right: 20px;  
+      z-index: 1;
+    }
+
+    &__bottom-block {
+      align-items: flex-end;
+      box-sizing: border-box;
+      padding: 0 20px;
+      min-height: 40px;
+      height: auto;
+      margin-bottom: 0;
+
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+
+      img {
+        height: 18px;
+      }
+    }
+
+    &__textarea {
+      border: none;
+
+      height: 40px;
+      margin-top: 0;
+      padding: 10px;
+
+      width: calc(100% - 85px);
+    }
+
+    &__product-photo {
+      
+      width: 30px;
+      height: 30px; 
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    &__field {
+      background-color: $color-smoke;
+      padding: 20px;
+      max-height: unset;
+      height: calc( 100vh - 164px );
+
+      &::-webkit-scrollbar{
+        width: 0;
+      }
+      scrollbar-width: auto;
+      scrollbar-color: auto;
+    }
+
+    &__product-name {
+      color: #000;
+      border-bottom: none;
+      display: block;
+      padding: 11px 20px;
+
+      &:hover {
+        border-bottom-color: $color-gainsboro;
+      }
+    }
+
+    &__multiple-photo {
+      margin-top: 5px;
+      
+      li {
+        height: 70px;
+        width: 48%;
+      }
+    }
+
+    &__message-body {
+      max-width: 60%;
+      min-width: 205px;
+    }
+
+    &__product-name {
+      display: none;
+    }
+
+    &__mobile-options {
+      &.active {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.2s;
+      }
+    }
+
+    &__mobile-option-item {
+      padding-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:last-child { 
+        padding-bottom: 0;
+      }
+
+      svg {
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+    }
+
+    &__user-name{
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  .my-msg {
+    flex-flow: row-reverse;
+
+    .chat {
+      &__message-body {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 0;
+        margin-right: 8px;
+
+        &::before {
+          position: absolute;
+          bottom: -1px;
+          left: unset;
+          right: -8px;
+          transform: rotate(90deg);
+          border-bottom: 7px solid $color-yellow;
+        }
+    
+        &::after {
+          border-bottom: 7px solid white;
+          right: -6px;
+          left: unset;
+          transform: rotate(90deg);
+        }
+      }
+
+      &__avatar-smaller {
+        display: none;
+      }
+    }
+  }
+}
+

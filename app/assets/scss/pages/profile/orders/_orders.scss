@@ -1,0 +1,82 @@
+.orders {
+
+  &__drpd {
+    display: none;
+    height: 38px;
+  }
+
+  &__bottom-block {
+    padding: 0 20px;
+  }
+
+  &__date-col {
+    width: 15%
+  }
+  &__order-num-col {
+    width: 17%;
+  }
+  &__seller-name-col {
+    width: 32%;
+  }
+  &__summ-col {
+    width: 23%;
+  }
+  &__status-col {
+    width: 14%;
+  }
+
+  &__seller-wrap {
+    display: flex;
+    align-items: center;
+    
+    div:first-child {
+      margin-right: 5px;
+    }
+  }
+
+  // transactions
+  &__type-col {
+    width: 10%;
+  }
+  &__date-time-col {
+    width: 27%;
+  }
+  &__descr-col {
+    width: 40%;
+  }
+  &__sum-col {
+    width: 23%;
+    text-align: right;
+  }
+}
+
+@media (max-width: 1200px) {
+  .orders {
+    &__sum-col
+    &__status-col {
+      max-width: 87px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .orders {
+    &__status-col {
+      max-width: 100%;
+    }
+
+    &__tab {
+      display: none;
+    }
+
+    &__drpd {
+      display: block;
+    }
+
+    &__bottom-block {
+      display: none;
+    }
+
+    // transactions type
+  }
+}

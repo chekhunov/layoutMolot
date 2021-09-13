@@ -1,0 +1,111 @@
+@import "../abstracts/variables";
+
+.text-btn {
+  text-transform: uppercase;
+  color: #F2994A;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  cursor: pointer;
+  // font-weight: 500;
+  user-select: none;
+
+  &_text-transform-init {
+    text-transform: initial;
+  }
+
+  &_weight-400 {
+    font-weight: 400;
+  }
+}
+
+.shop-btn,
+.primary-btn,
+.secondary-btn {
+  cursor: pointer;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  user-select: none;
+  text-align: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  
+  img,
+  svg {
+    display: block;
+    margin-right: 10px;
+  }
+
+  &_stretched-height {
+    height: 100%;
+  }
+  &_height-38 {
+    height: 38px;
+  }
+  &_lowercase {
+    text-transform: initial;
+  }
+}
+
+.shop-btn {
+  transition: box-shadow 0.22s ease;
+
+  &:hover {
+    &.secondary-btn {
+      background-color: inherit;
+      border: 2px solid;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.primary-btn {
+  background-color: $color-yellow;
+
+  &:hover {
+    background-color: #fff;
+    border: 2px solid $color-yellow;
+    color: #000;
+  }
+
+  &_hover-transparent {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+}
+
+.secondary-btn {
+  background-color: #fff;
+  border: 2px solid $color-yellow;
+
+  &:hover {
+    border: none;
+    background-color: $color-yellow;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .primary-btn,
+  .secondary-btn {
+    height: 38px;
+  }
+
+  .shop-btn {
+    &.primary-btn,
+    &.secondary-btn {
+      height: 44px;
+    }
+  }
+}

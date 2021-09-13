@@ -1,0 +1,66 @@
+.return {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 65px;
+  background-color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 50%;
+    height: 24px;
+    width: 24px;
+    background-image: url('~/assets/icons/arrow.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  &__mobile-text {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .return {
+    padding-left: 45px;
+    
+    &::before {
+      left: 17px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .return {
+    position: fixed;
+    width: 100%;
+    top: 35px;
+    height: 40px;
+    justify-content: center;
+    padding-left: 0;
+    z-index: 5;
+    box-shadow: 0px 1px 6px rgb(0 0 0 / 8%);
+    
+    &__text {
+      display: none;
+    }
+
+    &__mobile-text {
+      display: block;
+      text-transform: initial;
+      font-weight: 400;
+    }
+
+  }
+}

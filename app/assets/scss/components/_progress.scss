@@ -1,0 +1,93 @@
+@import "../abstracts/variables";
+
+.progress {
+  position: relative;
+  color: $color-gray;
+  line-height: initial !important;
+
+  &__line {
+    background-color: $color-silver;
+    position: absolute; 
+    left: 6.5px;
+    top: 3%;
+    height: 95%;
+    width: 1px;
+    z-index: 0;
+  }
+
+  &.reversed {
+    .progress__item {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+    .progress__indicator{
+      margin: 0 0 0 10px;
+    }
+    .progress__line {
+      left: unset;
+      right: 6.5px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.active {
+      color: #000;
+      font-weight: 500;
+
+      .progress__indicator {
+        background-color: #219653;
+      }
+    }
+  }
+
+  &__indicator {
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 1;
+    height: 14px;
+    width: 14px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: $color-silver;
+    box-sizing: border-box;
+
+    &::after {
+      content: '';
+      background-image: url('~/assets/icons/progress-check.svg');
+      position: absolute;
+      right: 3px;
+      top: 2px;
+      height: 10px;
+      width: 9px;
+      background-size: cover;
+    }
+
+    &.predict {
+      background-color: #fff;
+      border: 1px solid $color-silver;
+    }
+  }
+
+
+
+}
+
+// @media (max-width: 767px) {
+//   // .progress {
+//   //   // &__indicator {
+//   //   //   &::before {
+//   //   //     width: 25px;
+//   //   //     transform: translate(25%, 25px) rotate(90deg);
+//   //   //   }
+//   //   // }
+//   // }
+// }

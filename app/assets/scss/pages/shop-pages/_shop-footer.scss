@@ -1,0 +1,242 @@
+.shop-footer {
+  width: 100%;
+
+  &__inner {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  &__media-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+  }
+
+  &__media-item {
+    margin-right: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__item-more,
+  &__item {
+    cursor: pointer;
+    a {
+      color: #fff;
+    }
+  }
+
+  &__title,
+  &__item-more {
+    font-size: 20px;
+  }
+
+  &__col {
+    box-sizing: border-box;
+    padding-right: 20px;
+  }
+
+  &__item-more {
+    margin-right: 100px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    &:last-child {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  &__delivery {
+    width: 25%;
+  }
+  &__payment {
+    width: 50%;
+  }
+  &__contacts {
+    width: 25%;
+  }
+  &__more {
+    width: 75%;    
+  }
+  &__media {
+    width: 25%;
+  }
+
+  &__more-list {
+    display: flex;
+    margin-bottom: -30px;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__contacts-str-1,
+  &__contacts-str-2 {
+    color: #fff;
+  }
+
+  &__contacts-str-1 {
+    margin-bottom: 11px;
+    display: inline-block;
+  }
+
+  &__rights,
+  &__bottom {
+    color: #B1AFAC;
+  }
+
+  &__bottom {
+    display: flex;
+    padding-bottom: 20px;
+  }
+  &__copyright {
+    margin-right: 30px;
+    text-transform: uppercase;
+  }
+
+  &__rights {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__contacts-item {
+    margin-bottom: 30px;
+    cursor: initial;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .shop-footer {
+    &_only-desktop {
+      display: none;
+    }
+
+    &__delivery {
+      width: 25%;
+    }
+    &__payment {
+      width: 35%;
+    }
+    &__contacts {
+      width: 40%;
+    }
+    &__more {
+      width: 60%;    
+    }
+    &__media {
+      width: 40%;
+    }
+
+    &__item-more {
+      margin-right: 70px;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .shop-footer {
+    margin-bottom: 50px;
+
+    &__inner {
+      padding: 30px 0;
+    }
+
+    &__delivery {
+      width: 44%;
+    }
+    &__payment {
+      width: 56%;
+    }
+    &__contacts {
+      width: 55%;
+    }
+    &__more {
+      width: 45%;    
+    }
+    &__media {
+      width: 100%;
+    }
+    
+    &__item-more,
+    &__title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  
+    &__more-list {
+      flex-direction: column;
+    }
+
+    &__item-more {
+      margin-right: 70px;
+    }
+
+    &__title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &__item {
+      margin-bottom: 13px;
+      font-size: 14px;
+    }
+
+    &__item-more {
+      margin-right: 0;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__contacts-str-1 {
+      margin-bottom: 8px;
+    }
+
+    &__contacts-item {
+      margin-bottom: 20px;
+    }
+
+    &__bottom {
+      font-size: 10px;
+      padding-bottom: 10px;
+    }
+
+
+    &__media-list {
+      margin-bottom: -15px;
+    }
+    &__media-item {
+      margin-bottom: 10px;
+    }
+
+  }
+}

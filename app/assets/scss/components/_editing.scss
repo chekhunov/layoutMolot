@@ -1,0 +1,69 @@
+.editing {
+  position: relative;
+
+  &.active {
+    .editing {
+      &__text {
+        display: none;
+      }
+      &__input-wrap {
+        display: block;
+      }
+      &__pencil-btn {
+        display: none;
+      }
+    }
+  }
+
+  &__pencil-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+  }
+
+  &__input {
+    height: 38px;
+    padding: 0 32px 0 10px;
+  }
+
+  &__input-wrap {
+    position: relative;
+    display: none;
+  }
+
+  &__save-btn,
+  &__delete-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      svg rect {
+        fill: #ebebeb;
+      }
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__save-btn {
+    right: 10px;
+  }
+
+  &__delete-btn {
+    right: -21px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .editing {
+    &__input {
+      font-size: 14px;
+    }
+  }
+}

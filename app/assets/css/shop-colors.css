@@ -1,0 +1,119 @@
+  /* 
+  
+    .sc         - shop color. its a primary color
+    .sc-sec     - secondary color
+     
+    properties:
+    -font       --> color
+    -bg         --> background-color
+    -bord       --> border-color
+    -stroke     --> stroke
+    -fill       --> fill
+
+    pseudo classes: 
+    -h          --> :hover
+
+
+    'html' is to increase class weight but avoid an '!important' 
+
+    
+  */
+  /*  ready-made  */
+
+    /* buttons */
+      html .sc-secondary-btn {
+        border-color: var(--shop-color);
+      }
+      html .sc-secondary-btn:hover {
+        background-color: var(--shop-color);
+      }
+
+      html .sc-primary-btn {
+        background-color: var(--shop-color);
+      }
+      html .sc-primary-btn:hover {
+        border-color: var(--shop-color);
+      }
+    /* /buttons  */
+
+    /* tabs */
+      html .sc-tab:hover {
+        color: var(--shop-color);
+      }
+      html .sc-tab.active {
+        color: var(--shop-color);
+        border-color: var(--shop-color);
+      }
+    /* /tabs */
+    
+  /*  /ready-made  */
+
+
+
+  /* Primary */
+    html .sc-color {
+      color: var(--shop-color);
+    }
+    html .sc-color-h:hover {
+      color: var(--shop-color);
+    }
+
+    html .sc-bg {
+      background-color: var(--shop-color);
+    }
+
+    html .sc-bord {
+      border-color: var(--shop-color);
+    }
+    html .sc-bord-h {
+      border-color: var(--shop-color);
+    }
+
+    html .sc-fill {
+      fill: var(--shop-color);
+    }
+
+    html .sc-stroke svg path {
+      stroke: var(--shop-color);
+    }
+    html .sc-stroke-h svg path:hover {
+      stroke: var(--shop-color);
+    }
+  /* /Primary */
+  
+
+
+  /* Secondary */
+
+    html .sc-color-sec {
+      color: var(--shop-sec-color);
+    }
+    html .sc-color-sec-h:hover {
+      color: var(--shop-sec-color);
+    }
+
+    html .sc-bg-sec {
+      background-color: var(--shop-sec-color);
+    }
+
+    html .sc-bord-sec {
+      border-color: var(--shop-sec-color);
+    }
+
+    html .sc-fill-sec {
+      fill: var(--shop-sec-color);
+    }
+
+    html .sc-stroke-sec {
+      stroke: var(--shop-sec-color);
+    }
+
+  /* /Secondary */
+
+  /* low opacity */
+
+  html .sc-bg-transp {
+    background-color: var(--shop-color-transp);
+  }
+
+  /* /low opacity */

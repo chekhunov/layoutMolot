@@ -1,0 +1,148 @@
+.promo-card {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #fff;
+
+  &__photo-wrap {
+    height: 158px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f1efef;
+  }
+  &__img,
+  &__logo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__logo {
+    object-fit: contain;
+  }
+
+  &__content {
+    position: relative;
+    background: #002E45;
+    height: 214px;
+    padding: 21px 0 10px 15px;
+    box-sizing: border-box;
+
+    &.purple {
+      background-color: #472A5D;
+    }
+    &.dark-blue {
+      background-color: #002E45;
+    }
+    &.cyan {
+      background-color: #50AFC9;
+    }
+    &.blue {
+      background-color: #005172;
+    }
+    &.orange {
+      background-color: #F2994A;
+    }
+    &.beige {
+      background-color: #D1AF94;
+    }
+    &.green {
+      background-color: #43695B;
+    }
+    &.gray {
+      background-color:#333F48;
+    }
+  } 
+
+  &__btn {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    transition: background-color 0.2s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: -34px;
+    right: 3px;
+    height: 59px;
+    width: 59px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+
+  &__logo-wrap {
+    width: 35px;
+    height: 32px;
+    margin-right: 6px;
+  }
+
+  &__seller {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  &__company-name-wrap {
+    width: calc(100% - 40px);
+  }
+  &__company-name {
+    font-weight: 400;
+    font-size: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__paragraph {
+    line-height: 21px;
+    font-weight: 300;
+    width: 100%;
+    padding-right: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  &_adaptive {
+    min-width: 240px;
+    margin-right: 18px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .promo-card {
+    border-radius: 0;
+  }
+}

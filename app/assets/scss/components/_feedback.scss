@@ -1,0 +1,147 @@
+@import "../abstracts/variables";
+
+.commentator {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+
+  &__date {
+    color: $color-gray;
+  }
+
+  &__avatar {
+    margin-right: 10px;
+  }
+
+  &__user-name {
+    font-size: 16px;
+  }
+
+}
+
+.feedback {
+  &__review-wrap {
+    display: flex;
+  }
+
+  &__review-text {
+    margin-bottom: 20px;
+  }
+
+  &__commentator {
+    margin-right: 45px;
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+
+  &__score {
+    display: flex;
+    margin-bottom: 10px;
+
+    &.two {
+      .feedback__score-item:nth-child(2) path {
+        fill: $color-yellow;
+      }
+    }
+    &.three {
+      .feedback__score-item:not(:nth-child(4)):not(:last-child) path {
+        fill: $color-yellow !important;
+      }
+    }
+    &.four {
+      .feedback__score-item:not(:last-child) path {
+        fill: $color-yellow !important;
+      }
+    }
+    &.five {
+      .feedback__score-item path {
+        fill: $color-yellow !important;
+      }
+    }
+  }
+
+  &__score-item {
+    margin-right: 4px;
+
+    svg {
+      display: block;
+    }
+
+    &:first-child path {
+      fill: $color-yellow;
+    }
+
+  }
+
+  &__review-text {
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    margin-bottom: 30px;
+  }
+
+  &__answer {
+    position: relative;
+  }
+
+  &__answer-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 120px;
+  }
+
+  &__impression-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+    img {
+      display: block;
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+  .commentator {
+    
+    &__main {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+
+  .feedback {
+    &__review-wrap {
+      flex-direction: column;
+    }
+
+    &__input {
+      height: 38px;
+    }
+
+    &__score-item {
+      margin-right: 0;
+
+      svg {
+        height: 16px;
+        width: 16px;
+      }
+    }
+
+  }
+
+}

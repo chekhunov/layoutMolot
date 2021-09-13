@@ -1,0 +1,40 @@
+.notifications {
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__clear {
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+}
+
+@media (max-width: 1310px) {
+  .notifications {
+    &__clear {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  // .notifications {
+
+  // }
+}
+
+@media (max-width: 767px) {
+  .notifications {
+    &__tabs {
+      display: none;
+    }
+
+    &__clear {
+      display: none;
+    }
+
+  }
+}

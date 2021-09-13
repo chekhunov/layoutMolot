@@ -1,0 +1,47 @@
+.arrows {
+  position: absolute;
+  display: none;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 320px;
+  top: 305px;
+  z-index: 3;
+
+  &__inner {
+    position: relative;
+    width: 100%;
+  }
+
+  &__right,
+  &__left {
+    cursor: pointer;
+    position: absolute;
+    transition: 0.3s ease;
+    opacity: 1;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__right {
+    right: 4px;
+  }
+
+  &__left {
+    left: 20px;
+    transform: rotate(180deg);
+  }
+
+  &__disabled {
+    cursor: initial;
+    opacity: 0 !important;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .arrows {
+    display: flex;
+  }
+}

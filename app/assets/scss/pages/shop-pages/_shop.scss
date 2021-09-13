@@ -1,0 +1,39 @@
+.shop {
+  &__heading-sm,
+  &__heading-md,
+  &__heading-lg  {
+    font-weight: 500;
+  }
+  &__heading-lg {
+    font-size: 48px;
+  }
+  &__heading-md {
+    font-size: 36px;
+  }
+  &__heading-sm {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .shop {
+    &__heading-lg {
+      font-size: 36px;
+      font-weight: 400;
+    }
+  }
+  
+}
+
+
+@media (max-width: 767px) {
+  .shop {
+    &__heading-lg {
+      font-size: 22px;
+    }
+    &__heading-md {
+      font-size: 28px;
+    }
+  }
+  
+}

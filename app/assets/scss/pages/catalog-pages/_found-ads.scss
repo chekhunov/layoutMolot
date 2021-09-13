@@ -1,0 +1,36 @@
+.found-ads {
+  // padding-top: 50px;
+  margin-bottom: 50px;
+
+  &__card-list {
+    margin: 0 0 50px 0;
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.33% - 7px)); 
+    grid-gap: 100px;  
+  }
+
+  &__wrap {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .found-ads {
+    &__card-list {
+      grid-template-columns: repeat(2, calc(50% - 5px));
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .found-ads {
+    padding-top: 30px;
+
+    &__card-list {
+      grid-template-columns: repeat(1, 100%); 
+      grid-gap: 30px;
+    }
+  }
+}

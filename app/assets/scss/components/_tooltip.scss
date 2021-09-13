@@ -1,0 +1,68 @@
+@import '../abstracts/variables';
+
+.tooltip {
+  position: relative;
+
+  &.bottom {
+    .tooltip {
+      &__tip {
+        top: unset;
+        bottom: calc(-100% - 35px);
+        right: 0;
+        transform: scale(0.9) translate(15px, -8px);
+      }
+    }
+  }
+
+  &__icon {
+    cursor: help;
+  }
+
+  &__link {
+    margin-top: 4px;
+    display: block;
+    color: $color-orange;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  
+  &:hover {
+    .tooltip__tip {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1) translate(0, 0);
+    }
+  }
+  
+  &__tip {
+    visibility: hidden;
+    z-index: 5;
+    transition: 0.25s ease;
+    position: absolute;
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height: 12px;
+    width: 157px;
+    // min-height: 64px;
+    background: #F2F2F2;
+    color: $color-gray;
+    border-radius: 10px;
+    padding: 8px 10px;
+    right: -160px;
+    top: -58px;
+    opacity: 0;
+    transform: scale(0.9) translate(-15px, 8px);
+  }
+
+}
+
+@media (max-width: 767px) {
+  .tooltip {
+    &__tip {
+      right: -90px;
+      top: -80px;
+    }
+  }
+}

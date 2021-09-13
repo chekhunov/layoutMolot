@@ -1,0 +1,40 @@
+.constructor-modal {
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // background-color: rgba(255, 255, 255, 1);
+  // z-index: 666;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  // min-width: 280px;
+
+  &__inner {
+    position: absolute;
+    min-height: 50%;
+    max-width: 100%;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: 0 auto 25%;
+    background-color: #fff;
+    text-align: center;
+    z-index: 999;
+    display: -moz-box;
+    display: flex;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .constructor-modal {
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,219 @@
+@import "~/assets/scss/abstracts/variables";
+
+.table {
+  overflow-y: auto;
+
+  &__inner {
+    min-width: 727px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__row,
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+
+  &__head {
+    color: $color-gray;
+    white-space: nowrap;
+
+    div {
+      border-left: none;
+    }
+  }
+
+  &__row {
+    border-top: $color-gainsboro 1px solid;
+
+    &:last-child {
+      border-bottom: $color-gainsboro 1px solid;
+    }
+  }
+  
+  &__cancel-btn {
+    color: #F2994A;
+  }
+
+  &__col-inner {
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.empty {
+      color: $color-red;
+    }
+
+    &:hover {
+      text-overflow: initial;
+      overflow: visible;
+      white-space: initial;
+      background-color: #fff;
+      z-index: 2;
+    }
+
+  }
+
+  &__checkbox {
+    margin-right: 20px;
+  }
+
+  &__main-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__publish-btn,
+  &__save-btn {
+    width: 300px;
+  }
+
+  &__right-btns {
+    display: flex;
+  }
+  &__publish-btn {
+    margin-right: 20px;
+  }
+
+  &__photo-col,
+  &__name-col,
+  &__code-col,
+  &__category-col,
+  &__price-col,
+  &__old-price-col,
+  &__more-col {
+    display: flex;
+    padding: 15px 10px;
+    height: 60px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  &__name-col,
+  &__code-col,
+  &__category-col,
+  &__price-col, 
+  &__old-price-col,
+  &__more-col {
+    border-left: 1px solid $color-gainsboro;
+  }
+
+  &__photo-col {
+    width: 12%;
+    padding-left: 20px;
+    padding-right: 0;
+  }
+  &__name-col {
+    width: 23%;
+  }
+  &__code-col {
+    width: 14%;
+  }
+  &__category-col {
+    width: 15%;
+  }
+  &__price-col {
+    width: 11%;
+  }
+  &__old-price-col {
+    width: 11%;
+  }
+  &__more-col {
+    width: 14%;
+  }
+
+  &__more-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__more-link {
+    margin-right: 10px;
+  }
+
+  &__trash-icon {
+    &:hover {
+      path {
+        stroke: $color-gray;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .table {
+
+    &__inner {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    &__photo-col {
+      padding-left: 10px;
+    }
+    
+    &__checkbox {
+      margin-right: 15px;
+    }
+
+    &__publish-btn {
+      margin-right: 10px;
+    }
+
+    &__name-col {
+      width: 21%;
+    }
+    &__price-col,
+    &__old-price-col {
+      width: 10%;
+    }
+    &__more-col {
+      width: 17%;
+    }
+
+  }
+
+}
+
+@media (max-width: 767px) {
+  .table {
+    &__publish-btn {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    &__right-btns,
+    &__publish-btn,
+    &__save-btn,
+    &__cancel-btn {
+      width: 100%;
+    }
+    
+    &__save-btn {
+      margin-bottom: 10px;
+      order: -1;
+    }
+
+    &__publish-btn {
+      
+      margin-bottom: 23px;
+    }
+
+    &__right-btns {
+      flex-wrap: wrap;
+      order: -1;
+    }
+
+    &__main-btns {
+      flex-wrap: wrap;
+    }
+
+
+  }
+}

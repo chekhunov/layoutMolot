@@ -1,0 +1,14 @@
+<svg width="170" height="245" viewBox="0 0 170 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="170" height="245" rx="4" fill="url(#paint0_angular)"/>
+<rect x="19.2852" y="19.8164" width="131.443" height="79.2647" rx="1.77809" fill="#EBEBEB"/>
+<rect x="19.2852" y="111.692" width="103.402" height="7.20588" rx="1.77809" fill="#EBEBEB"/>
+<rect x="19.2852" y="127.904" width="85.8763" height="7.20588" rx="1.77809" fill="#EBEBEB"/>
+<rect x="19.2852" y="144.12" width="70.1031" height="7.20588" rx="1.77809" fill="#EBEBEB"/>
+<rect x="19.2852" y="199.963" width="112.165" height="19.8162" rx="1.77809" fill="#EBEBEB"/>
+<defs>
+<radialGradient id="paint0_angular" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(170 4.50368) rotate(125.544) scale(283.392 200.399)">
+<stop offset="0.00608867" stop-color="#7979FF"/>
+<stop offset="1" stop-color="#7A7AFF" stop-opacity="0.85"/>
+</radialGradient>
+</defs>
+</svg>

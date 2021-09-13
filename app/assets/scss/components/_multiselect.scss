@@ -1,0 +1,119 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.multiselect {
+  &.active {
+    .multiselect {
+      &__dropping-wrap {
+        transform: translateY(10px);
+      }
+    }
+
+  }
+
+  &__selected-wrap {
+    height: auto;
+    cursor: default;
+    min-height: 50px;
+    padding-right: 40px;
+  }
+  &__selected-list {
+    margin: 15px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__selected-item {
+    margin-right: 20px;
+    margin-bottom: 15px;
+    display: flex;
+  }
+
+  &__remove-one {
+    position: relative;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: $color-smoke;
+    border-radius: 4px;
+    margin-right: 5px;
+
+    &:hover {
+      background-color: $color-gainsboro;
+    }
+
+    &::before {
+      content: url('~/assets/icons/remove-filter.svg');
+      position: absolute;
+      display: block;
+      left: 4px;
+      top: -3px;
+    }
+  }
+
+  &__dropping-wrap {
+    top: unset;
+  }
+
+  &__choose {
+    color: $color-silver;
+    cursor: pointer;
+  }
+
+  &__item {
+    display: flex;
+    padding: 0;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 10px;
+  }
+
+  &__checkbox {
+    margin-right: 10px;
+  }
+
+  &__dropping-scroll-wrap {
+    // margin: 12px 10px 12px 0;
+    overflow-y: auto;
+    @include custom-scroll;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+  .multiselect {
+    &__selected-wrap {
+      min-height: 38px;
+    }
+
+    &__selected-list {
+      margin-top: 10px;
+    }
+    &__selected-item {
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+    
+    &__remove-one {
+      &::before {
+        left: 4px;
+        top: -1px;
+      }
+    }
+    
+    &__item {
+      padding: 0 !important;
+    }
+
+    &__dropping-wrap {
+      transform: translateY(5px) !important;
+    }
+
+  }
+
+}

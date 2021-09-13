@@ -1,0 +1,38 @@
+.item-btns {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+
+  &__remove {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      margin-right: 15px;
+    }
+  }
+
+  &__publicate {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .item-btns {
+    &__remove {
+      svg {
+        margin-right: 25px;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    &__publicate {
+      width: 100%;
+    }
+  }
+}

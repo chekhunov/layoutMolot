@@ -1,0 +1,62 @@
+.actions-block {
+  display: flex;
+  max-width: 1110px;
+
+  &__input {
+    margin-right: 35px;
+    width: 100%;
+  }
+
+  &__add-btn,
+  &__import-btn {
+    flex-shrink: 0;
+  }
+
+  &__import-btn {
+    margin-right: 20px;
+    width: calc(33.3% - 35px);
+  }
+
+  &__add-btn {
+    width: calc(33.3% - 20px);
+  }
+  
+}
+
+@media (max-width: 1200px) {
+  .actions-block {
+    &__input {
+      margin-right: 15px;
+    }
+  
+    &__import-btn {
+      margin-right: 10px;
+      width: calc(30% - 15px);
+    }
+  
+    &__add-btn {
+      width: calc(30% - 10px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .actions-block {
+    flex-wrap: wrap;
+
+    &__input {
+      display: none;
+    }
+
+    &__import-btn,
+    &__add-btn {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__import-btn {
+      margin-bottom: 10px;
+    }
+
+  }
+}

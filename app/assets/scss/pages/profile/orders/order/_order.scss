@@ -1,0 +1,135 @@
+@import "~/assets/scss/abstracts/variables";
+
+.order {
+  &__heading {
+    width: 100%;
+    font-weight: 400;
+  }
+  
+  &__comment {
+    border: 1px solid $color-gainsboro;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 118px;
+    padding: 15px;
+    resize: none;
+    outline: none;
+
+    &::placeholder {
+      color: $color-silver;
+    }
+  }
+
+  &__btns {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__main-btns {
+    display: flex;
+  }
+  &__btn-save {
+    width: calc(60%);
+  }
+  &__btn-cancel {
+    margin-right: 20px;
+    width: calc(40% - 20px);
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+
+  &__field-name {
+    display: inline-block;
+    margin-right: 10px;
+    color: $color-gray;
+  }
+
+  &__info {
+    font-weight: 500;
+  }
+
+  &__status-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__input,
+  &__drpd {
+    width: 250px;
+  }
+
+  &__drpd {
+    li {
+      padding: 15px;
+
+      &.active {
+        color: #F2994A;
+      }
+    }
+  } 
+}
+
+@media (max-width: 1200px) {
+  .order {
+    &__heading {
+      font-size: 28px;
+    }
+
+    &__input,
+    &__drpd {
+      width: 50%;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .order {
+    &__heading {
+      position: fixed;
+      top: 45px;
+      width: 100%;
+      cursor: pointer;
+      text-align: center;
+      font-size: 14px;
+      z-index: 6;
+    }
+
+    &__input,
+    &__drpd {
+      width: 60%;
+    }
+
+    &__input {
+      height: 38px;
+      font-size: 12px;
+    }
+
+    &__field-name {
+      margin-right: 5px;
+    }
+
+    &__title {
+      margin-bottom: 18px;
+    }
+
+    &__main-btns {
+      flex-direction: column;
+    }
+    &__btn-save {
+      width: 100%;
+    }
+    &__btn-cancel {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+  }
+}

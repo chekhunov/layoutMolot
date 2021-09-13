@@ -1,0 +1,234 @@
+@import "~/assets/scss/abstracts/variables";
+
+.report {
+  &__item {
+    border-top: 1px solid $color-gainsboro;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 20px;
+
+    &:last-child {
+      border-bottom: 1px solid $color-gainsboro;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px 0  !important;
+  }
+
+  &__col-1,
+  &__col-2 {
+    margin-right: 40px;
+  }
+
+  &__col-1 {
+    width: 25%;
+  }
+  &__col-2 {
+    width: 52%;
+  }
+  &__col-3 {
+    width: 23%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__plate {
+    height: 38px;
+    width: 190px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    color: #fff;
+    background-color: #219653;
+
+    &.missed {
+      background-color: #EB5757;
+    }
+    &.incorrect {
+      background-color: #F2994A;
+    }
+  }
+  
+  &__main-btns {
+    display: flex;
+  }
+  &__continue-btn {
+    width: 310px;
+  }
+  &__cancel-btn {
+    width: 178px;
+    margin-right: 20px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__edit-link {
+    margin-bottom: 13px;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 -15px -15px;
+  }
+
+  &__photo-wrap {
+    position: relative;
+    border-radius: 6px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    width: 15%;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%; 
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .report {
+    &__plate {
+      width: 164px;
+      font-size: 12px;
+    }
+
+    &__item {
+      border-top: 1px solid $color-gainsboro;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      padding: 10px 0 10px 20px;
+    }
+    
+    &__col-1,
+    &__col-2 {
+      margin-right: 20px;    
+    }
+
+    &__bottom {
+      flex-wrap: wrap;
+    }
+    &__links {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    &__main-btns {
+      flex-wrap: wrap;
+      width: 100%;
+    } 
+    &__continue-btn {
+      width: calc(70% - 30px);
+    }
+    &__cancel-btn {
+      width: 30%;
+      margin-right: 30px;
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .report {
+    &__photo-wrap {
+      width: 19%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .report {
+    &__plate {
+      height: 24px;
+      width: 160px;
+    }
+
+    &__col-1 {
+      order: 0;
+      margin: 0 15px 0 0;
+      width: calc(45% - 15px);
+      font-size: 12px;
+    }
+    &__col-2 {
+      order: 2;
+      margin-right: 0;
+      width: 100%;
+    }
+    &__col-3 {
+      order: 1;
+      width: 55%;
+    }
+
+    &__col-2-inner {
+      margin-top: 17px;      
+    }
+
+    &__item {
+      flex-wrap: wrap;
+      padding: 15px 0;
+    }
+
+    &__bottom {
+      flex-wrap: wrap;
+    }
+    &__links {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    &__main-btns {
+      flex-wrap: wrap;
+      width: 100%;
+    } 
+    &__continue-btn {
+      width: 100%;
+    }
+    &__cancel-btn {
+      width: 100%;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+
+    &__photo-wrap {
+      margin-left: 13px;
+      margin-bottom: 13px;
+      width: 20%;
+    }
+    
+    &__gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 15px 0 -15px -15px;
+    }
+
+    &__info {
+      padding: 10px 0  !important;
+    }
+    
+  }
+}

@@ -1,0 +1,141 @@
+@import '~/assets/scss/abstracts/mixins';
+
+$main-height: 550px;
+.big-slider {
+  // background-color: aquamarine;
+  // height: 500px;
+
+  position: relative;
+  height: $main-height;
+
+  &__gallery {
+    // position: absolute !important; 
+    width: 100%;
+    height: 100%;
+  }
+
+  &__swiper {
+    height: 100%;
+  }
+
+  &__slide {
+    height: 100%
+  }
+
+  &__img {
+    @include image-cover;
+  }
+
+  // &__interactions {
+  //   height: $main-height;
+  //   width: 100%;
+  //   position: absolute;
+  //   left: 0;
+  //   top: -$main-height;
+  //   z-index: 10;
+  // }
+
+  &__arrows {
+    position: absolute;
+    top: calc(#{-$main-height} / 2);
+    width: 100%;
+    z-index: 5;
+    left: 0;
+  }
+  &__next,
+  &__prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+    opacity: 0.65;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__next {
+    right: -30px;
+  }
+  &__prev {
+    transform: rotate(-180deg) translateY(50%);
+    left: -30px;
+  }
+
+  &__dots {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: -36px;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+  }
+  &__dot-list {
+    display: flex;
+    
+  }
+  // &__dot {
+  //   height: 13px;
+  //   width: 13px;
+  //   border-radius: 50%;
+  //   transition: opacity 0.3s;
+  //   background-color: #fff;
+  //   opacity: 0.35;
+  //   margin-right: 10px;
+
+  //   &.active {
+  //     opacity: 1;
+  //   }
+  // }
+}
+
+@media (max-width: 1300px) {
+  .big-slider {
+    &__next {
+      right: 15px;
+    }
+    &__prev {
+      left: 15px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .big-slider {
+    height: 363px;
+    &__interactions {
+      height: 363px;
+    }
+    
+    &__arrows {
+      display: none;
+    }
+    &__dots {
+      top: -26px;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+
+  .big-slider {
+    margin-top: 90px;
+    
+    height: 180px;
+    &__interactions {
+      height: 180px;
+    }
+
+    &__dots {
+      top: -13px;
+    }
+    &__dot {
+      height: 6px;
+      width: 6px;
+      margin-right: 8px;
+    }
+  }
+}

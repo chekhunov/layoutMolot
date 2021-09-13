@@ -1,0 +1,58 @@
+@import "~/assets/scss/abstracts/variables";
+
+.checkbox {
+  &.active {
+    display: block;
+  }
+
+  &.black {
+    border-color: #333333;
+  }
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+
+  display: none;
+  flex-shrink: 0;
+  height: 18px;
+  width: 18px;
+  border: 1px solid red;
+  border-radius: 40px;
+  margin-right: 16px;
+  border: 1px solid #BDBDBD;
+  background-color: inherit;
+  height: 18px;
+  width: 18px;
+  outline: none;
+  border-radius: 4px;
+
+  &:disabled {
+    border: 1px solid $color-gainsboro;
+    background-color: inherit;
+  }
+
+  &:checked {
+    background-color: $color-yellow;
+    border-color: $color-yellow;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../icons/check-mark.svg');
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      left: 1px;
+      top: 3px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  // .checkbox {
+    // margin-left: 20px;
+    // margin-right: 0;
+  // }
+}

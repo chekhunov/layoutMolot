@@ -1,0 +1,106 @@
+.catalog {
+
+  &__cols {
+    display: flex;
+    margin-bottom: 50px;
+  }
+  &__left-col {
+    width: 210px;
+    margin-right: 30px;
+    flex-shrink: 0;
+    border-right: 1px solid $color-gainsboro;
+  }
+  &__right-col {
+    width: calc(100% - 241px);
+  }
+
+  &__head {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__head-filter {
+    display: none;
+  }
+
+  &__sort-wrap {
+    display: flex;
+    align-items: center;
+  }
+  &__sort-drpd {
+    width: 134px;
+    margin-left: 15px;
+  }
+
+  &__card-list {
+    display: grid;
+    grid-template-columns: repeat(4, calc(24% - 3.5px));
+    grid-gap: 17px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .catalog {
+    &__left-col {
+      display: none;
+    } 
+    &__right-col {
+      width: 100%;
+    }
+
+    &__head-filter {
+      display: block;
+    }
+    
+    &__total {
+      display: none;
+    }
+
+    &__card-list {
+      grid-template-columns: repeat(3, calc(33.33% - 8px));
+      grid-gap: 12px;
+    }
+
+    &__promotion {
+      padding: 20px 0;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog {  
+    &__sort-text {
+      display: none;
+    }
+
+    &__head {
+      margin-bottom: 20px;
+    }
+
+    &__card-list {
+      grid-template-columns: repeat(2, calc(50% - 5px));
+      grid-gap: 10px;
+    }
+
+    &__sort-wrap {
+      width: 50%;
+    }
+    
+    &__sort-drpd {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &__head-left {
+      width: 50%;
+      margin-right: 10px;
+    }
+
+    &__promotion {
+      margin-top: 90px;
+      padding-bottom: 1px;
+    }
+  }
+}

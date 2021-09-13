@@ -1,0 +1,68 @@
+.crumbs {
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+
+  &__link {
+    text-decoration: underline;
+
+    &.active {
+      text-decoration: none;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__return {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    div {
+      font-weight: 500;
+    }
+
+    svg {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .crumbs {
+    position: fixed;
+    top: 35px;
+
+    &__inner {
+      height: 40px;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url('../icons/arrow.svg');
+        position: absolute;
+        left: -8px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    &__route,
+    &__return {
+      display: none;
+    }
+
+  }
+}

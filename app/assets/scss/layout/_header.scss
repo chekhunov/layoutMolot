@@ -1,0 +1,513 @@
+@import '../abstracts/variables';
+@import "../abstracts/mixins";
+
+.header {
+  position: relative;
+  background-color: $color-base;
+
+  &.shop {
+    border-bottom: 1px solid #fff;
+    .header {
+      &__logo {
+        height: 31px;
+        width: 121px;
+      }
+      &__options {
+        display: none;
+      }
+      &__shop-avatar {
+        display: block;
+      }
+      &__catalog {
+        display: none;
+      }
+      &__descr {
+        display: block;
+      }
+      &__logo-wrap {
+        margin-right: 13px;
+        display: flex;
+      }
+      &__logo-container {
+        display: flex;
+      }
+      &__head-inner {
+        padding: 8px 0;
+      }
+    }
+  }
+
+  &__descr {
+    display: none;
+    font-weight: 300;
+    line-height: 14px;
+    user-select: none;
+  }
+
+  &__shop-avatar {
+    display: none;
+  }
+
+  &__head-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    color: #fff;
+  }
+
+  &__options {
+    display: flex;
+  }
+
+  &__logo-wrap {
+    margin-right: 60px;    
+  }
+  &__logo {
+    cursor: pointer;
+    display: block;
+  }
+
+  &__lang-wrap {
+    display: flex;
+    align-items: center;
+    margin-right: 44px;
+
+    a:hover {
+      text-decoration: underline;
+      color: $color-yellow;
+    }
+  }
+
+  &__lang-btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #fff;
+
+    &.active {
+      color: $color-yellow;
+    }
+  }
+
+  &__icon-wrap {
+    width: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+
+    svg {
+      cursor: pointer;
+      display: block;
+    }
+  }
+
+  &__place-product {
+    width: 200px !important;
+
+    &:hover {
+      color: #fff !important;
+    }
+  }
+
+  &__cart svg,
+  &__profile svg {
+    &:hover {
+      path {
+        fill: $color-yellow;
+      }
+    }
+  }
+  &__favorites svg:hover path {
+    stroke: $color-yellow;
+  }
+  
+  &__count {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    position: absolute;
+    background-color: $color-yellow;
+    border-radius: 50%;
+    font-size: 11px;
+    top: 5px;
+    right: 18px;
+    color: #000;
+
+    &.oversize {
+      border-radius: 10px;
+      width: 22px;
+      font-size: 10px;
+      right: 11px;
+    }
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+  }
+
+
+  // ***************************** CATALOG  *****************************
+  &__catalog-btn {
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+
+    &:hover {
+      color: $color-yellow;
+      
+      div {
+        background-color: $color-yellow;
+      }
+    }
+
+  }
+
+  &__catalog {
+    z-index: 10;
+    position: relative;
+  }
+
+  &__dropdown {
+    box-sizing: border-box;
+    display: flex;
+    position: absolute;
+    padding: 20px;
+    padding-right: 0;
+    color: #000;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: 0.25s ease;
+    top: 35px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-2%);
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+
+      .header__catalog-btn {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__catalog-img-wrap {
+    width: 70px;
+    height: 52px;
+  }
+      
+  &__catalog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__li-wrap {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #CEDCFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px;
+    min-width: 270px;
+    height: 70px;
+    max-height: 80px;
+    word-break: break-word;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+    span {
+      font-size: 14px;
+      width: 100%;
+      line-height: 20px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+
+  &__catalog-name-list,
+  &__catalog-mob-name-list {
+
+    li {
+      box-sizing: border-box;
+      padding: 14px 20px 14px 10px;
+      border-top: 1px solid $color-gainsboro;
+      min-width: 225px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #F2F2F2;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $color-gainsboro;
+      }
+    }
+  }
+
+  &__catalog-list-wrap {
+    @include custom-scroll;
+    width: 294px;
+    max-height: 710px;
+    overflow-y: auto;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+      
+      .header__li-wrap {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+  &__catalog-mob-name-list {
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  &__catalog-arrow {
+    display: none;      
+    transform: rotate(180deg);
+    transition: 0.3s;
+  }
+
+  // ***************************** /CATALOG  *****************************
+}
+
+@media (max-width: 1200px) {
+  .header {
+    
+    &.shop {
+      .header {
+        &__descr {
+          display: none;
+        }
+      }
+    }
+
+    &__heading {
+      font-size: 36px;
+    }
+
+    &__body-inner {
+      margin: 20px 0 0 0;
+    }
+
+    &__search {
+      margin-bottom: 35px;
+    }
+
+    &__dropdown {
+      position: fixed;
+      top: 70px;
+      left: 70px;
+    }
+
+    &__lang-wrap {
+      display: none;
+    }
+
+    &__icon-wrap {
+      display: none;
+
+      &:nth-child(3) {
+        display: flex;
+      }
+    }
+
+    &__logo-wrap {
+      margin-right: 50px;
+    }
+
+  }
+}
+
+@media (max-width: 1070px) {
+  .header {
+    &__dropdown {
+      left: 10px;
+      width: calc(100% - 20px);
+    }
+    
+    &__li-wrap {
+      min-width: calc(100% - 10px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    &__place-product {
+      display: none !important;
+    }
+
+    &__head-inner {
+      padding: 7px 0;
+    }
+
+    &__logo {
+      height: 21px;
+      width: 80px;
+    }
+    
+    &__cart-btn {
+      height: 18px;
+      width: 18px;
+    }
+
+    &__burger {
+      display: block;
+    }
+
+    &__body-inner {
+      margin-top: 10px;
+    }
+
+    &__heading {
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    &__icon-wrap {
+      width: 25px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &__profile {
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    &__count {
+      height: 11px;
+      width: 11px;
+      line-height: 11px;
+      top: -5px;
+      right: 2px;
+      font-size: 8px;
+
+      &.oversize {
+        width: 20px;
+        right: -7px;
+      }
+    }
+
+    &__catalog-btn {
+      display: none;
+    }
+
+    // ***************************** CATALOG MOBILE ******************************
+
+    &__dropdown {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 0;
+      padding-right: 20px;
+      padding-bottom: 50px;
+    }
+
+    &__hide {
+      display: none;
+    }
+
+    &__catalog-list-wrap {
+      width: 100%;
+      max-height: 100vh;
+      margin-right: 0;      
+    }
+
+    &__catalog-name-list {
+      display: none;
+      
+  
+      &.active {
+        display: block;
+      }
+    }
+
+    &__catalog-name-list {
+      li {
+        width: 100%;
+      }
+    }
+
+    &__catalog-card-list {
+      width: 100%;
+      font-weight: 500;
+
+      li {
+        width: 100%;
+      }
+    }
+    
+    &__li-wrap {
+      margin-right: 0;
+      padding-right: 20px;
+      min-width: 0;
+
+      &.active {
+        + .header__catalog-mob-name-list {
+          transition: 0.35s cubic-bezier(1, 0, 0.5, 0.1);
+          max-height: 4000px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+        }
+        .header__catalog-arrow {
+          transform: rotate(0);
+        }
+      }
+
+    }
+
+    &__catalog-mob-name-list {
+      transition: 0.35s cubic-bezier(0.5, 1, 0, 1);
+      margin: 0 13px;
+      width: calc(100% - 26px);
+    }
+
+    &__catalog-arrow {
+      display: block;
+      width: 16px;
+      height: 16px;
+      // padding-right: 13px;
+      // padding-left: 21px;
+
+      margin-left: 10px;
+    }
+
+    
+  
+
+    // ***************************** /CATALOG MOBILE *****************************
+  }
+}

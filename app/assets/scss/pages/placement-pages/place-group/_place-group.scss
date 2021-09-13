@@ -1,0 +1,53 @@
+.place-group {
+  &__title div:last-child {
+    width: 75%;
+  }
+
+  &__new-char {
+    width: 100% !important;
+  }
+
+  &__controls {
+    position: relative;
+  }
+  
+  &__icons-wrap {
+    position: absolute;
+  }
+
+  &__label-hover {
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $color-gainsboro !important;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .place-group {
+    &__new-char {
+      svg:first-child {
+        display: none;
+      }
+      input:nth-child(2) {
+        margin-right: 10px !important;
+        width: calc(55% - 10px) !important;
+      }
+      input:nth-child(3) {
+        width: 45% !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .place-group {
+    &__mob-hide {
+      display: none;
+    }
+
+    &__item-btns {
+      display: none !important;
+    }
+  }
+}

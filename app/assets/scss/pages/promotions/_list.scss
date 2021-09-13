@@ -1,0 +1,25 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 17px;
+}
+
+@media (max-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .list {
+    display: block;
+
+    &__item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 150px;
+      }
+    }
+  }
+}

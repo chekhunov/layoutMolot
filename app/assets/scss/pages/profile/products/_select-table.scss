@@ -1,0 +1,146 @@
+@import "~/assets/scss/abstracts/variables";
+
+.select-table {  
+  border-radius: 10px;
+  overflow-x: auto;
+  background-color: #fff;
+
+  &.active {
+    .select-table {
+      &__options-list {
+        display: flex;
+      }
+      &__checkbox {
+        display: flex;
+      }
+      &__headings {
+        display: none;
+      }
+    
+    }
+  }
+
+  &__option {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+
+    &:hover {
+      svg path {
+        stroke: $color-gray;
+      }
+    }
+  }
+
+  &__mass-choose-text {
+    margin-left: 16px;
+  }
+
+  &__mass-select-btn {
+    cursor: pointer;
+    color: #000;
+    display: flex;
+  }
+
+  &__checkbox {
+    display: none;    
+    align-items: center;
+  }
+
+  &__inner {
+    padding: 10px 0;
+    min-width: 880px;
+    min-height: 650px;
+  }
+
+  &__row {
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+
+    &:hover {
+      background-color: #F7F7F7;
+
+      .products {
+
+        &__fixed-btns {
+          background: rgb(2,0,36);
+          background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, #F7F7F7 19%);
+        }
+        &__pencil-btn {
+          transition: visibility 0.15s ease, opacity  0.15s ease, transform  0.15s ease;
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(-50%);
+        }
+
+      }
+
+    }
+  }
+
+  &__option-name {
+    margin-left: 5px;
+  }
+  
+  &__choose-btn {
+    font-weight: 500;
+    color: #000;
+  }
+  
+  &__head-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    color: $color-gray;
+    padding: 15px 20px;
+  }
+
+  &__mass-select-wrap {
+    display: flex;
+  }
+  
+  &__options-list {
+    width: 100%;
+    display: none;
+    user-select: none;
+  }
+  &__options-item {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__headings {
+    width: 100%;
+    display: flex;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .select-table {
+    &__options-list {
+      flex-direction: column;
+    }
+
+    &__options-item {
+      margin: 0 0 15px 35px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+        // margin-left: 44px;
+
+        svg {
+          margin-right: 9px;
+        }
+      }
+    }
+
+  }
+}

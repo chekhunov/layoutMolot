@@ -1,0 +1,39 @@
+.bottom-block-pagin {
+  &__inner {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__more-btn {
+    width: 210px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bottom-block-pagin {
+    &__inner {
+      height: auto;
+      width: 100%;
+    }
+
+    &__more-btn {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .bottom-block-pagin {
+    &__more-btn {
+      width: 100%;
+    }
+
+    &__more-btn {
+      width: 100% !important;
+      height: 50px !important;
+    }
+  }
+}

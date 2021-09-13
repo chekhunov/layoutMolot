@@ -1,0 +1,73 @@
+@import "../abstracts/variables";
+
+.photo-edit {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  &__photo-wrap,
+  &__avatar {
+    margin-right: 21px;
+  }
+    
+  &__photo-wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 118px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  &__change,
+  &__remove  {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      margin-right: 11px;
+    }
+
+    &:hover {
+      svg path {
+        stroke: $color-gray;
+      }
+    }
+  }
+
+  &__change {
+    margin-bottom: 8px;
+  }
+
+  &__btns {
+    flex-shrink: 0;
+  }
+
+  
+
+}
+
+@media (max-width: 767px) {
+  .photo-edit {
+    &_flex-col-sm {
+      flex-direction: column;
+
+      .photo-edit {
+        &__btns {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;    
+        }
+        &__photo-wrap {
+          margin-right: 0;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,31 @@
+.disabled {
+  margin-bottom: 15px;
+  
+  &__change-btn {
+    color: #F2994A;
+    cursor: pointer;
+  }
+
+  &__input {
+    margin-bottom: 10px;
+  }
+
+  
+}
+
+@media (max-width: 767px) {
+  .disabled {
+    margin-bottom: 10px;
+
+    &__input {
+      margin-bottom: 0;
+      height: 38px;
+      font-size: 12px;
+    }
+
+    &__change-btn {
+      font-size: 12px;
+    }
+
+  }
+}

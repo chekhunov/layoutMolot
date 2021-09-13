@@ -1,0 +1,50 @@
+.upload {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  background-color: #F2F2F2;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+
+  &__text {
+    margin-left: 16px;
+    color: gray;
+  }
+
+  label {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+  }
+
+  &__help {
+    color: #4F4F4F;
+  }
+} 
+
+@media (max-width: 767px) {
+  .upload {
+    &__content {
+      width: 200px;
+    }
+
+    &__help {
+      font-size: 10px;
+    }
+  }
+}

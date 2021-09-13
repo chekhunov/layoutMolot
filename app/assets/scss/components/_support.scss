@@ -1,0 +1,97 @@
+@import "../abstracts/variables";
+
+.support {
+  padding: 33px;
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  justify-content: space-between; 
+  align-items: center;
+  box-sizing: border-box;+
+
+  &__text,
+  &__phone {
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+
+  &__text {
+    width: 55%;
+
+    div:nth-child(2) {
+      font-size: 28px;
+      // line-height: 150%;
+      margin-top: 7px;
+      align-self: baseline;
+    }
+  }
+
+  &__phone {
+    width: 30%;
+
+    div:first-child {
+      color: $color-gray;
+      margin-bottom: 3px;
+    }
+    a {
+      font-size: 36px;
+    }
+  }
+
+  &__media {
+    width: 15%;
+    margin-bottom: -10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    a {
+      margin-right: 15px;
+      margin-bottom: 10px;
+    }
+    svg {
+      display: block;
+    }
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .support {
+    padding: 20px;
+
+    &__phone div,
+    &__text {
+      &:first-child {
+        font-size: 10px;
+      }
+    }
+
+    &__phone a {
+      font-size: 22px;
+    }
+
+    &__text div:nth-child(2) {
+      font-size: 18px;
+    }
+
+    &__media {
+
+      a {
+        margin-right: 10px;
+
+        svg {       
+          width: 30px;
+          height: 30px;
+        }
+      }
+      
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .support {
+    display: none;
+  }
+}

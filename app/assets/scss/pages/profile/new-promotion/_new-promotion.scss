@@ -1,0 +1,93 @@
+
+@import "~/assets/scss/abstracts/variables";
+
+.new-promotion {
+  &__container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  &__col-name {
+    font-size: 10px;
+    color: $color-gray;
+  }
+
+  &__promo-photo {
+    width: 339px;
+  }
+
+  &__textarea {
+    height: 93px;
+    padding: 10px;
+  }
+
+  &_padding-0 {
+    padding: 0;
+  }
+
+  &__main-btns {
+    display: flex;
+    width: 50%;
+  }
+  &__cancel-btn {
+    margin-right: 16px;
+    width: calc(40% - 16px);
+  }
+  &__publish-btn {
+    width: 60%;
+  }
+
+  &__old-price {
+    text-decoration: line-through;
+  }
+
+}
+
+#file {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .new-promotion {
+    &__main-btns {
+      width: 100%;
+    }
+    &__cancel-btn {
+      margin-right: 16px;
+      width: calc(50% - 8px);
+    }
+    &__publish-btn {
+      width: calc(50% - 8px);
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .new-promotion {
+    &__container {
+      background-color: inherit;
+      padding: 0;
+    }
+
+    &__col-name {
+      font-size: 12px;
+    }
+
+    &__promo-photo {
+      width: 100%;
+    }
+    
+    &__textarea {
+      height: 80px;
+      padding: 7px;
+    }
+
+    &__new-price {
+      width: auto;
+    }
+
+  }
+}

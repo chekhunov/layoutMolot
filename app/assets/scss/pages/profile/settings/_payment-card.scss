@@ -1,0 +1,47 @@
+.payment-card {
+  display: flex;
+  align-items: center;
+
+  &__icon-wrap {
+    margin-right: 20px;
+    height: 23px;
+    width: 30px;
+  }
+
+  &__icon {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__name,
+  &__number {
+    font-weight: 600;
+    color: #3D3C38;
+  }
+
+  &__name {
+    margin-right: 15px;
+  }
+
+  &__left-block {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .payment-card {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__left-block {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+  }
+}

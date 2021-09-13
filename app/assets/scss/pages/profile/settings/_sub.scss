@@ -1,0 +1,80 @@
+@import "~/assets/scss/abstracts/variables";
+
+.sub {
+  &__row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__name-col,
+  &__activity-col {
+    padding-right: 13px;
+  }
+
+  &__name-col {
+    width: 24%;
+  }
+  &__activity-col {
+    width: 46%;
+  }
+  &__actions-col {
+    width: 30%;
+    text-align: right;
+  }
+
+  &__name-col {
+    font-size: 18px;
+  }
+
+  &__activity-term {
+    margin-bottom: 5px;
+
+    &.green {
+      color: #219653;
+    }
+  }
+
+  &__activity-info {
+    font-size: 12px;
+    color: $color-gray;
+  }
+}
+
+@media (max-width: 767px) {
+  .sub {
+    &__row {
+      flex-wrap: wrap;
+      margin-bottom: 27px;
+    }
+
+    &__name-col,
+    &__activity-col {
+      padding-right: 20px;
+    }
+    
+    &__name-col {
+      font-size: 14px;
+      width: calc(35% - 20px);
+    }
+
+    &__activity-col {
+      padding-right: 0;
+      width: 65%;
+      text-align: right;
+    }
+
+    &__actions-col {
+      width: 100%;
+    }
+
+    &__activity-info {
+      margin-bottom: 18px;
+    }
+
+  }
+}

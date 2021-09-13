@@ -1,0 +1,24 @@
+@import "~/assets/scss/abstracts/variables";
+
+.mob-remove-one {
+  display: none;
+  justify-content: center;
+  
+  &__inner {
+    display: flex;
+    align-items: center;
+    color: $color-gray;
+    cursor: pointer;
+
+    img {
+      height: 23px;
+      margin-right: 8px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .mob-remove-one {
+    display: flex;
+  }
+}

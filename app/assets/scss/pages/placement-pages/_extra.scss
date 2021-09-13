@@ -1,0 +1,71 @@
+.extra {
+  max-height: 42px;
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+  overflow: hidden;
+
+  &__dropping {
+    transition: opacity 0.4s cubic-bezier(0, 1, 0, 1);
+    opacity: 0;
+  }
+
+  &.active {
+    transition: 0.4s cubic-bezier(1, 0, 1, 0);
+    max-height: 4000px;
+    overflow: visible;
+    
+    .extra {
+      &__title::before {
+        transform: rotate(180deg);
+      }
+      &__dropping {
+        transition: opacity 0.4s cubic-bezier(1, 0, 1, 0);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 30px;
+
+    div:first-child {
+      font-weight: 500;
+    }
+    div:last-child {
+      font-size: 10px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      top: -2px;
+      background-image: url('../icons/arrow.svg');
+      transition: transform 0.3s ease;
+      transform: rotate(0); 
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .extra {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .extra {
+    &__title {
+      div:first-child {
+        font-size: 12px;
+      }
+      div:last-child {
+        font-size: 10px;
+        width: 75%;
+      }
+    }
+  }
+}

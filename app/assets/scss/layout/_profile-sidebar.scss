@@ -1,0 +1,184 @@
+@import '~/assets/scss/abstracts/variables';
+
+.profile-sidebar {
+  background-color: $color-base-light;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  
+  &_mobile {
+    display: none;
+  }
+
+  &__user {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-gainsboro;
+  }
+
+  &__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__top-block {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px 12px 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F2F2F2;
+      
+      .profile-sidebar__company-name {
+        color: #000;
+      }
+    }
+  }
+
+  &__business-acc {
+    display: none;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 2px 6px;
+    box-sizing: border-box;
+    background: #2F80ED;
+    transform: translateY(-1px);
+
+    &.active {
+      display: inline-block;
+    }
+  }
+
+  &__add-acc-btn {
+    width: 100%;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 12px 10px 12px 20px;
+    text-align: left;
+    
+    &:hover {
+      background-color: #F2F2F2;
+      color: black;
+    }
+  }
+
+  &__business-avatar,
+  &__avatar {
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+  }
+
+  &__options {
+    li {
+      position: relative;
+    }
+  }
+
+  &__user-email,
+  &__company-email {
+    font-size: 12px;
+    color: $color-gray;
+  }
+
+  &__business-avatar {
+    height: 40px;
+    width: 40px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__indicator {
+    background-color: $color-yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    border-radius: 50%;
+    top: calc(50% - 12px);
+    color: #000;
+    font-weight: 400;
+    
+    &.active {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__options {
+    border-bottom: 1px solid $color-gainsboro;
+    font-weight: 300;
+    padding: 10px 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    li {
+      cursor: pointer;
+      padding: 12px 20px;
+
+      &.active,
+      &:hover {
+        background-color: #F2F2F2;
+        color: #000;
+      }
+    }
+  }
+
+  &__auth {
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 20px;
+
+    &:hover {
+      background-color: #F2F2F2;
+      color: black;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .profile-sidebar {
+    position: fixed;
+    max-width: 270px;
+    max-height: calc(100vh - 85px);
+    overflow: auto;
+    width: 100%;
+    z-index: 9;
+    top: 84px;
+    left: -100%;
+    transition: 0.35s ease;
+
+    &.active {
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .profile-sidebar {
+    top: 35px;
+    max-width: initial;
+
+    &_mobile {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@import "~/assets/scss/abstracts/variables";
+
+.progress {
+  position: relative;
+  width: 388px;
+
+  &__bar {
+    width: 100%;
+    height: 8px;
+    box-sizing: border-box;
+    border: 1px solid $color-silver;
+    border-radius: 4px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: 100%;
+      height: 8px;
+      transition: right 0.5s ease; 
+      border-radius: 4px;
+      border-color: #219653;
+      background-color: #219653;
+    }
+  }
+
+  &.second {
+    .progress {
+      &__bar::after {
+        right: 50%;
+      }
+      &__second-step {
+        transition-delay: 0.35s;
+        background-color: #219653;
+      }
+    }
+  }
+  &.third {
+    .progress {
+      &__bar::after {
+        right: 0;
+      }
+      &__second-step {
+        transition-delay: 0.35s;
+        background-color: #219653;
+      }
+      &__third-step {
+        transition-delay: 0.35s;
+        background-color: #219653;
+      }
+    }
+  }
+
+  &__first-step,
+  &__second-step,
+  &__third-step {
+    transition: background-color 0.5s ease 0s;
+    position: absolute;
+    left: 0;
+    top: -8px;
+    color: #fff;
+    line-height: 24px;
+    width: 24px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: default;
+    user-select: none;
+  }
+  
+  &__second-step,
+  &__third-step {
+    background-color: #C4C4C4;
+  }
+  
+  &__first-step {
+    background-color: #219653;
+    left: -12px;
+  }
+
+  &__second-step {
+    left: calc(50% - 12px);
+  }
+
+  &__third-step {
+    left: calc(100% - 12px);
+  }
+
+  &__text-wrap {
+    position: relative;
+    text-align: center;
+  }
+  &__text {
+    line-height: 14px;
+    position: absolute;
+    top: 10px;
+    left: -45px;
+    width: 120px;
+    color: #000;
+    font-size: 12px;
+  }
+  
+}
+
+
+@media (max-width: 767px) {
+  .progress {
+    width: calc(100% - 40px);
+
+    &__text {
+      left: -23px;
+      width: 70px;
+      font-size: 10px;
+    }
+  }
+}

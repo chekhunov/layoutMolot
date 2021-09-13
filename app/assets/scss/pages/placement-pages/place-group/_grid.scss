@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, calc( 50% - 15px));
+  grid-gap: 30px;
+
+  &__item {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 7;
+    padding-top: 47px;
+    box-sizing: border-box;
+
+    &.active {
+      z-index: 8;
+    }
+  }
+
+  &__container {
+    padding: 0 13px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    &__container {
+      padding: 0;
+    }
+
+    &__item {
+      padding-top: 23px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    display: inline-flex;
+    grid-gap: 0;
+
+    &__item {
+      padding: 0 20px;
+      background-color: inherit;
+    }
+
+  }
+}

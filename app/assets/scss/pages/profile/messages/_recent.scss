@@ -1,0 +1,272 @@
+@import "~/assets/scss/abstracts/mixins";
+@import "~/assets/scss/abstracts/variables";
+
+.recent {
+  width: 40%;
+  flex-shrink: 0;
+  display: flex;
+
+  &.active {
+    display: flex;
+  }
+  
+  &__dialog-list {
+    @include custom-scroll;
+    margin: 0;
+    padding: 0;
+    min-height: 316px;
+    list-style-type: none;
+    max-height: 745px;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+  &__dialog-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    min-width: 316px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &.selected {
+      .recent__dialog {
+        border: 1px solid $color-yellow;
+      }
+    }
+
+    &.favorite {
+      .recent__dialog {
+        border-left: 9px solid $color-yellow;
+        padding-left: 7px;
+      }
+    }
+
+    &.active {
+      .checkbox {
+        display: block;
+      }
+
+      .recent__dialog {
+        width: calc(100% - 41px);
+      }
+    }
+
+    
+    &.new-message {
+      .recent {
+        &__new-messages-count {
+          display: flex;
+        }
+    
+        &__dialog {
+          background-color: #fff;
+        }
+      }
+    }
+
+  }
+
+  &__dialog {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid $color-gainsboro;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px 20px 15px 15px;
+    height: 70px;
+    margin-right: 7px;
+    position: relative;
+    background-color: #F2F2F2;
+    cursor: pointer;
+    // min-width: 330px;
+    width: calc(100% - 7px);
+  }
+
+  &__new-messages-count {
+    position: absolute;
+    background-color: $color-yellow;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 21px;
+    display: none;
+  }
+
+  &__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+    span {
+      font-size: 25px;
+      line-height: 25px;
+      color: #fff;
+    }
+  }
+
+  &__dialog-wrap {
+    display: flex;
+    flex-flow: column;
+    width: calc(100% - 50px);
+  }
+
+  &__sender-name {
+    font-size: 14px;
+    font-weight: 550;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%;
+    margin-right: 5px;
+  }
+
+  &__date {
+    color: $color-silver;
+    font-size: 12px;
+  }
+
+  &__dialog-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__dialog-info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__preview-message {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    min-height: 19px;
+    // max-width: 265px;
+    width: calc(100% - 60px);
+  }
+
+
+}
+
+@media (max-width: 1200px) {
+  .recent {
+    &__dialog {
+      padding: 10px 15px;
+      margin-right: 5px;
+    }
+
+    &__dialog-info {
+      margin-bottom: 5px;
+    }
+
+    &__new-messages-count {
+      right: 10px;
+    }
+
+    &__preview-message { 
+      max-width: 85%;
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      min-height: 19px;
+    }
+
+    &__dialog-list {
+      margin: 0;
+      padding: 0;
+      height: 670px;
+    }
+  }
+ 
+}
+
+
+@media (max-width: 767px) {
+
+  .recent {
+    width: 100%;
+    display: none;
+
+    &__dialog-card {
+      margin-bottom: 0;
+      border: none;
+      border-bottom: 1px solid $color-gainsboro;
+      background-color: #fff;
+      min-width: unset;
+
+      &.favorite {
+        border-left: 6px solid $color-yellow;
+
+        .recent__dialog {
+          border-left: none;
+          padding-left: 14px;
+        }
+
+        .checkbox {
+          margin-left: 14px;
+        }
+      }
+
+      &.active {
+        .recent__dialog {
+          width: calc(100% - 36px);
+        }
+      }
+
+      &.new-message {
+        background-color: #fff;
+      }
+    }
+
+    &__dialog {
+      margin-right: 0;
+      border-radius: 0;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      background-color: inherit;
+    }
+
+    &__dialog-list {
+      &::-webkit-scrollbar{
+        width: 0;
+      }
+      scrollbar-width: auto;
+      scrollbar-color: auto;
+      height: calc(100vh - 35px - 35px - 156px);
+      max-height: unset;
+      min-height: unset;
+    }
+
+    &__preview-message {
+      white-space: normal;
+      width: calc(100% - 50px);
+    }
+
+    &__new-messages-count {
+      right: 20px;
+    }
+
+    &__dialog-card {
+      background-color: #F2F2F2;
+    }
+  }
+
+
+}

@@ -1,0 +1,26 @@
+@import "../abstracts/variables";
+
+.hr-mtb30,
+.hr-mtb50,
+.hr-mtb20-sm {
+  border: none;
+  border-bottom: 1px solid $color-gainsboro;
+}
+
+.hr-mtb50 {
+  margin: 50px 0;
+}
+
+.hr-mtb30 {
+  margin: 30px 0;
+}
+
+@media (max-width: 767px) {
+  .hr-mtb50 {
+    display: none;
+  }
+
+  .hr-mtb20-sm {
+    margin: 20px 0;
+  }
+}
