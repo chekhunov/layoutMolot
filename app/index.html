@@ -76,6 +76,12 @@
 
             <div class="sellers-nav__item-desc">
               Размещение товара
+
+              <span class="sellers-nav__desc-mobile">
+                <svg width="6" height="12" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 13L7 7L1 1" stroke="#25282B" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
             </div>
           </div>
 
@@ -455,7 +461,7 @@
               <span class="package-services__item-num">2500
                 <span class="package-services__item-desc">
                   <span>грн</span>
-                  <span>в месяц</span>
+                  <span class="package-services__item-month">в месяц</span>
                 </span>
               </span>
             </div>
@@ -530,7 +536,7 @@
               <span class="package-services__item-num">5500
                 <span class="package-services__item-desc">
                   <span>грн</span>
-                  <span>в месяц</span>
+                  <span class="package-services__item-month">в месяц</span>
                 </span>
               </span>
             </div>
@@ -651,33 +657,36 @@
               </div>
 
               <div class="paid-services__checkbox-inner">
-                <label for="one-time">
-                  <input id="one-time" type="radio" name="r1">
 
-                  Единоразово
+
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r1">
+
+                  <span class="paid-services__checkbox-text">Единоразово</span>
                 </label>
 
-                <label for="every-day">
-                  <input id="every-day" type="radio" name="r1">
 
-                  Каждый день
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r1">
+
+                  <span class="paid-services__checkbox-text">Каждый день</span>
                   <span class="paid-services__discount">-5%</span>
                 </label>
 
-                <label for="one-day-week">
-                  <input id="one-day-week" type="radio" name="r1">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r1">
 
-                  1 раз в неделю
+                  <span class="paid-services__checkbox-text">1 раз в неделю</span>
                   <span class="paid-services__discount">-10%</span>
                 </label>
               </div>
 
-              <div class="paid-services__bo">
+              <div class="paid-services__bottom">
                 <div class="paid-services__price">
-                  500 <span>грн</span>
+                  500 <span class="paid-services__price-v">грн</span>
                 </div>
 
-                <button class="primary-btn">Заказать</button>
+                <button class="primary-btn paid-services__btn">Заказать</button>
               </div>
             </div>
           </div>
@@ -700,40 +709,40 @@
               </div>
 
               <div class="paid-services__checkbox-inner">
-                <label for="first-vip">
-                  <input id="first-vip" type="radio" name="r2">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r2">
 
-                  7 дней
+                  <span class="paid-services__checkbox-text">7 дней</span>
                 </label>
 
-                <label for="second-vip">
-                  <input id="second-vip" type="radio" name="r2">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r2">
 
-                  14 дней
+                  <span class="paid-services__checkbox-text">14 дней</span>
                   <span class="paid-services__discount">-5%</span>
                 </label>
 
-                <label for="three-vip">
-                  <input id="three-vip" type="radio" name="r2">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r2">
 
-                  21 день
+                  <span class="paid-services__checkbox-text">21 день</span>
                   <span class="paid-services__discount">-7%</span>
                 </label>
 
-                <label for="four-vip">
-                  <input id="four-vip" type="radio" name="r2">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r2">
 
-                  28 день
+                  <span class="paid-services__checkbox-text">28 дней</span>
                   <span class="paid-services__discount">-10%</span>
                 </label>
               </div>
 
-              <div class="paid-services__bo">
+              <div class="paid-services__bottom">
                 <div class="paid-services__price">
-                  800 <span>грн</span>
+                  800 <span class="paid-services__price-v">грн</span>
                 </div>
 
-                <button class="primary-btn">Заказать</button>
+                <button class="primary-btn paid-services__btn">Заказать</button>
               </div>
             </div>
           </div>
@@ -753,40 +762,40 @@
               </div>
 
               <div class="paid-services__checkbox-inner">
-                <label for="first-stock">
-                  <input id="first-stock" type="radio" name="r3">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r3">
 
-                  7 дней
+                  <span class="paid-services__checkbox-text">7 дней</span>
                 </label>
 
-                <label for="second-stock">
-                  <input id="second-stock" type="radio" name="r3">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r3">
 
-                  14 дней
+                  <span class="paid-services__checkbox-text">14 дней</span>
                   <span class="paid-services__discount">-5%</span>
                 </label>
 
-                <label for="three-stock">
-                  <input id="three-stock" type="radio" name="r3">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r3">
 
-                  21 день
+                  <span class="paid-services__checkbox-text">21 день</span>
                   <span class="paid-services__discount">-7%</span>
                 </label>
 
-                <label for="four-stock">
-                  <input id="four-stock" type="radio" name="r3">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r3">
 
-                  28 день
+                  <span class="paid-services__checkbox-text">28 дней</span>
                   <span class="paid-services__discount">-10%</span>
                 </label>
               </div>
 
-              <div class="paid-services__bo">
+              <div class="paid-services__bottom">
                 <div class="paid-services__price">
-                  500 <span>грн</span>
+                  500 <span class="paid-services__price-v">грн</span>
                 </div>
 
-                <button class="primary-btn">Заказать</button>
+                <button class="primary-btn paid-services__btn">Заказать</button>
               </div>
             </div>
           </div>
@@ -807,46 +816,48 @@
               </div>
 
               <div class="paid-services__checkbox-inner">
-                <label for="first-banner">
-                  <input id="first-banner" type="radio" name="r4">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r4">
 
-                  7 дней
+                  <span class="paid-services__checkbox-text">7 дней</span>
                 </label>
 
-                <label for="second-banner">
-                  <input id="second-banner" type="radio" name="r4">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r4">
 
-                  14 дней
+                  <span class="paid-services__checkbox-text">14 дней</span>
                   <span class="paid-services__discount">-5%</span>
                 </label>
 
-                <label for="three-banner">
-                  <input id="three-banner" type="radio" name="r4">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r4">
 
-                  21 день
+                  <span class="paid-services__checkbox-text">21 день</span>
                   <span class="paid-services__discount">-7%</span>
                 </label>
 
-                <label for="four-banner">
-                  <input id="four-banner" type="radio" name="r4">
+                <label class="paid-services__checkbox">
+                  <input type="radio" name="r4">
 
-                  28 день
+                  <span class="paid-services__checkbox-text">28 дней</span>
                   <span class="paid-services__discount">-10%</span>
                 </label>
               </div>
 
-              <div class="paid-services__bo">
+              <div class="paid-services__bottom">
                 <div class="paid-services__price">
-                  100 <span>грн</span>
+                  100 <span class="paid-services__price-v">грн</span>
                 </div>
 
-                <button class="primary-btn">Заказать</button>
+                <button class="primary-btn paid-services__btn">Заказать</button>
               </div>
             </div>
           </div>
-
-
         </div>
+
+        <p class="paid-services__mobile-text">Теперь вам не нужно задумываться, какая услуга сработает лучше для вашего
+          объявления. Нужно только решить, насколько
+          заметным вы хотите его сделать и как быстро желаете заключить сделку!</p>
       </div>
     </section>
   </main>
