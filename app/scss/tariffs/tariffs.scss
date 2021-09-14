@@ -1,5 +1,10 @@
 .sellers-nav {
   margin-bottom: 50px;
+
+  &__arrow-mobile {
+    display: none;
+  }
+
   &__title {
     margin-left: 35px;
     margin-bottom: 50px;
@@ -41,8 +46,41 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .sellers-nav {
+    &__title {
+      margin-left: 0;
+      font-size: 36px;
+      font-weight: 400;
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   .sellers-nav {
+
+    &__arrow-mobile {
+      display: block;
+      margin-left: 17px;
+    }
+
+    &__title {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 500;
+      background-color: #fff;
+    }
+
+    &__title-text {
+      width: 100%;
+      margin-left: auto;
+    }
+
     &__menu {
       margin-left: -20px;
       flex-direction: column;
@@ -281,6 +319,10 @@
     color: #fff;
     border-radius: 4px 4px 0px 0px;
 
+    &--first {
+      background-color: #EB5757;
+    }
+
     &--second {
       background-color: #f29b4a;
     }
@@ -312,6 +354,37 @@
 @media screen and (max-width: 1024px) {
   .package-services {
     margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .package-services {
+    &__desc {
+      margin-bottom: 20px;
+    }
+
+    &__items {
+      margin-left: 0;
+      margin-right: 0;
+      flex-direction: column;
+      align-items: center;
+      overflow: initial;
+    }
+
+    &__item {
+      min-width: 280px;
+      min-height: 500px;
+      max-height: 500px;
+      padding: 52px 20px 10px;
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__item-title {
+      margin-bottom: 30px;
+    }
   }
 }
 

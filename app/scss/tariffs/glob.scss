@@ -4,3 +4,10 @@
   font-size: 28px;
   color: #000000;
 }
+
+@media screen and (max-width: 767px) {
+  .title-sellers  {
+    font-size: 16px;
+    font-weight: 550;
+  }
+}
