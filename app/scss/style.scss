@@ -1,10 +1,11 @@
 @import 'vars'; //переменные для цвета для шрифта
 // @import 'fonts'; // подключение шрифтов
 // @import 'reset'; //сброс всех стилей
-// @import 'global'; 
+// @import 'global';
 @import 'libs'; // адаптив
 @import 'tariffs/tariffs';
 @import 'tariffs/glob';
+@import 'howtosell/howtosell';
 @import '../assets/scss/main';
 // @import 'components/header'; // адаптив
 // @import 'components/footer'; // адаптив
