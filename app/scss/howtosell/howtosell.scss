@@ -1,0 +1,144 @@
+.auto {
+  width: 100%;
+  max-width: 100%;
+  height: calc(100% * var(--ratio));
+  max-height: var(--ratio);
+}
+
+.how-to-sell {
+  &__wrapper {
+    padding: 35px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  &__meta {
+    max-width: 1021px;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    &--top {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    &--mb25 {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__item-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    &--top {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+
+    &--last {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item-step {
+    width: 100%;
+    max-width: 40px;
+    margin-right: 20px;
+    white-space: nowrap;
+  }
+
+  &__item-img {
+    &--step1 {
+      --ratio: 44 / 798;
+    }
+
+    &--step3 {
+      display: none;
+      --ratio: 368 / 268;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .how-to-sell {
+    &__wrapper {
+      padding: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .how-to-sell {
+    &__wrapper {
+      margin-left: -12px;
+      margin-right: -12px;
+      padding: 8px 8px 30px;
+    }
+
+    &__meta {
+      margin-bottom: 40px;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &--title {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &__text {
+      &--top {
+        font-weight: 550;
+        // margin-bottom: 20px !important;
+      }
+    }
+
+    .title-sellers {
+      display: none;
+
+      // &--desktop {
+      // display: none;
+      // }
+
+      // &--step3 {
+      //   display: inline-block;
+      // }
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .how-to-sell {
+    &__item-img {
+      &--desktop {
+        display: none;
+      }
+
+      &--step3 {
+        display: inline-block;
+      }
+
+      &--step4,
+      &--step5 {
+        width: 100%;
+        max-width: 100%;
+        height: calc(100% * var(--ratio));
+        max-height: var(--ratio);
+      }
+    }
+  }
+}
